@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">OttusApp</string>
+    <string name="Film1">Invasion</string>
+    <string name="Film2">Venom</string>
+    <string name="Film">Android</string>
+    <string name="Film4">Avenger</string>
 </resources>
