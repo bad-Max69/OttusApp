@@ -14,12 +14,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:cropToPadding="false"
-        android:background=""
         app:layout_constraintBottom_toTopOf="@id/button"
         app:layout_constraintEnd_toStartOf="@+id/VenomImg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/invasion" />
+        app:srcCompat="@drawable/invasionImg" />
 
     <ImageView
         android:id="@+id/VenomImg"
@@ -31,12 +30,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/invasionImg"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/venom" />
+        app:srcCompat="@drawable/venomImg" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:linksClickable="true"
+        android:onClick="buttonFilm1"
         android:text="@string/Film1"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="@+id/invasionImg"
@@ -51,7 +52,10 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline"
         app:layout_constraintEnd_toEndOf="@+id/VenomImg"
         app:layout_constraintStart_toStartOf="@+id/VenomImg"
-        app:layout_constraintTop_toBottomOf="@+id/VenomImg" />
+        app:layout_constraintTop_toBottomOf="@+id/VenomImg"
+        android:onClick="buttonFilm2"
+
+        />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -83,7 +87,7 @@
         app:layout_constraintStart_toEndOf="@id/androidImg"
         app:layout_constraintEnd_toEndOf="parent"
 app:layout_constraintBottom_toTopOf="@id/button4"
-        app:srcCompat="@drawable/avengersWar"
+        app:srcCompat="@drawable/avengerswarImg"
         />
 
     <Button
@@ -94,7 +98,10 @@ app:layout_constraintBottom_toTopOf="@id/button4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/androidImg"
         app:layout_constraintStart_toStartOf="@+id/androidImg"
-        app:layout_constraintTop_toBottomOf="@+id/androidImg" />
+        app:layout_constraintTop_toBottomOf="@+id/androidImg"
+        android:onClick="buttonFilm3"
+
+        />
 
     <Button
         android:id="@+id/button4"
@@ -105,6 +112,9 @@ app:layout_constraintBottom_toTopOf="@id/button4"
         app:layout_constraintEnd_toEndOf="@+id/avengersImg"
         app:layout_constraintStart_toEndOf="@+id/androidImg"
         app:layout_constraintStart_toStartOf="@id/avengersImg"
-        app:layout_constraintTop_toBottomOf="@id/avengersImg" />
+        app:layout_constraintTop_toBottomOf="@id/avengersImg"
+        android:onClick="buttonFilm4"
+
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
