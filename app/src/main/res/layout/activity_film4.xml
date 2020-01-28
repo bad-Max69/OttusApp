@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toTopOf="@+id/detailsFilm4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/avengerswarImg" />
+        app:srcCompat="@drawable/avengerswarimg" />
 
     <TextView
         android:id="@+id/detailsFilm4"

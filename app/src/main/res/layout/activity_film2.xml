@@ -13,7 +13,7 @@
         app:layout_constraintBottom_toTopOf="@+id/detailsFilm2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/venomImg" />
+        app:srcCompat="@drawable/venomimg" />
 
     <TextView
         android:id="@+id/detailsFilm2"
