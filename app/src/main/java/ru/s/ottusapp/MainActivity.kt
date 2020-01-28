@@ -15,46 +15,55 @@ import ru.s.ottusapp.films.Film4
 class MainActivity : AppCompatActivity() {
     val TAG = "LifeCycle"
     val SAV = "Save"
-    private var btnTextClr = 0
-    private var btn3TextClr = 0
+
+    private var btnTextClr = mutableListOf<Int>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(TAG, "Create")
 
-       btnTextClr = button.currentTextColor
-       btn3TextClr = button3.currentTextColor
+       btnTextClr.add(button.currentTextColor)
+       btnTextClr.add(button2.currentTextColor)
+       btnTextClr.add(button3.currentTextColor)
+       btnTextClr.add(button4.currentTextColor)
+
 
    if (savedInstanceState != null) {
 
-       btnTextClr = savedInstanceState.getInt("1")
-       btn3TextClr = savedInstanceState.getInt("2")
+       btnTextClr[0] = savedInstanceState.getInt("0")
+       btnTextClr[1] = savedInstanceState.getInt("1")
+       btnTextClr[2] = savedInstanceState.getInt("2")
+       btnTextClr[3] = savedInstanceState.getInt("3")
 
-       button.setTextColor(btnTextClr)
-       button3.setTextColor(btn3TextClr)
+       button.setTextColor(btnTextClr[0])
+       button2.setTextColor(btnTextClr[1])
+       button3.setTextColor(btnTextClr[2])
+       button4.setTextColor(btnTextClr[3])
 
 
-            Log.d(SAV, " wr btnTextClr $btnTextClr")
-            Log.d(SAV, " wr btn3TextClr $btn3TextClr")
+            Log.d(SAV, " wr btnTextClr ${btnTextClr[0]}")
+            Log.d(SAV, " wr btn3TextClr ${btnTextClr[1]}")
        }
 
     }
 
 
-
-
-
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        btnTextClr = savedInstanceState.getInt("1")
-        btn3TextClr = savedInstanceState.getInt("2")
+        btnTextClr[0] = savedInstanceState.getInt("0")
+        btnTextClr[1] = savedInstanceState.getInt("1")
+        btnTextClr[2] = savedInstanceState.getInt("2")
+        btnTextClr[3] = savedInstanceState.getInt("3")
 
-        button.setTextColor(btnTextClr)
-        button3.setTextColor(btn3TextClr)
+        button.setTextColor(btnTextClr[0])
+        button2.setTextColor(btnTextClr[1])
+        button3.setTextColor(btnTextClr[2])
+        button4.setTextColor(btnTextClr[3])
 
-        Log.d(SAV, "onRes $btnTextClr")
-        Log.d(SAV, "onRes $btn3TextClr")
+        Log.d(SAV, "onRes ${btnTextClr[0]}")
+        Log.d(SAV, "onRes ${btnTextClr[1]}")
 
     }
 
@@ -62,12 +71,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onSaveInstanceState(outState: Bundle) {
 
-          outState.putInt("1", btnTextClr)
-          outState.putInt("2", btn3TextClr)
+          outState.putInt("0", btnTextClr[0])
+          outState.putInt("1", btnTextClr[1])
+          outState.putInt("2", btnTextClr[2])
+          outState.putInt("3", btnTextClr[3])
         super.onSaveInstanceState(outState)
 
-        Log.d(SAV, "onSave $btnTextClr")
-        Log.d(SAV, "onSave $btn3TextClr")
+        Log.d(SAV, "onSave ${btnTextClr[0]}")
+        Log.d(SAV, "onSave ${btnTextClr[1]}")
     }
 
 
@@ -75,8 +86,8 @@ class MainActivity : AppCompatActivity() {
     val intent = Intent(this@MainActivity, Film1::class.java)
         startActivity(intent)
         button.setTextColor(ContextCompat.getColor(this,R.color.colorAccent))
-        btnTextClr = button.currentTextColor
-        Log.d(SAV, "btn $btnTextClr")
+        btnTextClr[0] = button.currentTextColor
+        Log.d(SAV, "btn ${btnTextClr[0]}")
 
     }
 
@@ -84,21 +95,21 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this@MainActivity, Film2::class.java)
         startActivity(intent)
         button2.setTextColor(ContextCompat.getColor(this, R.color.colorAccent))
-
+        btnTextClr[1] = button2.currentTextColor
     }
 
     fun buttonFilm3(view: View) {
         val intent = Intent(this@MainActivity, Film3::class.java)
         startActivity(intent)
         button3.setTextColor(ContextCompat.getColor(this,R.color.colorAccent))
-        btn3TextClr = button3.currentTextColor
-        Log.d(SAV, "btn $btn3TextClr")
+        btnTextClr[2] = button3.currentTextColor
+        Log.d(SAV, "btn ${btnTextClr[3]}")
     }
     fun buttonFilm4(view: View) {
         val intent = Intent(this@MainActivity,Film4::class.java)
         startActivity(intent)
         button4.setTextColor(ContextCompat.getColor(this,R.color.colorAccent))
-
+        btnTextClr[3] = button4.currentTextColor
     }
 
 }
