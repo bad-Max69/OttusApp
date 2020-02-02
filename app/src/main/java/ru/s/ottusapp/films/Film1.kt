@@ -26,4 +26,4 @@ class Film1 : AppCompatActivity() {
             startActivity(sendIntent)
         }
     }
-}
+   }

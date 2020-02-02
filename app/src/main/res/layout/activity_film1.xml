@@ -14,7 +14,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/invasionimg" />
+        app:srcCompat="@drawable/invasionimg"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/detailsFilm1"
@@ -36,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailsFilm1"
-        android:text="@string/BtnInviteFilm1"
+        android:text="@string/btnInviteFilm1"
         android:onClick="btnInviteFilm1"
         />
 
