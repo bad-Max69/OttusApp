@@ -19,13 +19,11 @@
 
     <TextView
         android:id="@+id/detailsFilm3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/textFilms"
         android:text="@string/detailsFilm3"
-        android:textAlignment="center"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="@id/btnInviteFilm3"
-        app:layout_constraintStart_toStartOf="@+id/imgFilm3"
+        app:layout_constraintBottom_toTopOf="@id/btnInviteFilm3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgFilm3" />
 
     <Button

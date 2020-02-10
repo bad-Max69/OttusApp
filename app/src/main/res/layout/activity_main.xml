@@ -18,7 +18,8 @@
         app:layout_constraintEnd_toStartOf="@+id/VenomImg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/invasionimg" />
+        app:srcCompat="@drawable/invasionimg"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/VenomImg"
@@ -30,13 +31,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/invasionImg"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/venomimg" />
+        app:srcCompat="@drawable/venomimg"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:linksClickable="true"
+        style="@style/btnFilms"
         android:onClick="buttonFilm1"
         android:text="@string/Film1"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -46,8 +46,7 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/btnFilms"
         android:onClick="buttonFilm2"
         android:text="@string/Film2"
         app:layout_constraintBottom_toTopOf="@+id/guideline"
@@ -74,7 +73,8 @@
         app:layout_constraintEnd_toStartOf="@id/avengersImg"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline"
-        app:srcCompat="@drawable/androidimg" />
+        app:srcCompat="@drawable/androidimg"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/avengersImg"
@@ -86,12 +86,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/androidImg"
         app:layout_constraintTop_toBottomOf="@id/guideline"
-        app:srcCompat="@drawable/avengerswarimg" />
+        app:srcCompat="@drawable/avengerswarimg"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/btnFilms"
         android:onClick="buttonFilm3"
         android:text="@string/Film"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,8 +103,7 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/btnFilms"
         android:onClick="buttonFilm4"
         android:text="@string/Film4"
         app:layout_constraintBottom_toBottomOf="parent"

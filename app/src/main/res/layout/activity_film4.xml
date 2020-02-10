@@ -18,11 +18,8 @@
 
     <TextView
         android:id="@+id/detailsFilm4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/textFilms"
         android:text="@string/detailsFilm4"
-        android:textAlignment="center"
-        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="@id/btnInviteFilm4"
         app:layout_constraintStart_toStartOf="@+id/imgFilm4"
         app:layout_constraintTop_toBottomOf="@+id/imgFilm4" />
