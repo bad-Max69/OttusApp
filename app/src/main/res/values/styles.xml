@@ -8,4 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="textFilms">
+        <item name="android:layout_width"> 0dp</item>
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:textAlignment"> center</item>
+        <item name="android:layout_marginTop">10dp</item>
+
+    </style><style name="btnFilms">
+        <item name="android:layout_width"> wrap_content</item>
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:textColor">@color/btnColorStd</item>
+    </style>
+
+
+
 </resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".films.Film3">
+
+    <ImageView
+        android:id="@+id/imgFilm3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/detailsFilm3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/androidimg"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/detailsFilm3"
+        style="@style/textFilms"
+        android:text="@string/detailsFilm3"
+        app:layout_constraintBottom_toTopOf="@id/btnInviteFilm3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgFilm3" />
+
+    <Button
+        android:id="@+id/btnInviteFilm3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnInviteFilm3"
+        android:text="@string/btnInviteFilm3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/detailsFilm3"
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
