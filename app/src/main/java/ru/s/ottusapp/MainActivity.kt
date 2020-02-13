@@ -8,10 +8,10 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
-import ru.s.ottusapp.films.Film1
-import ru.s.ottusapp.films.Film2
-import ru.s.ottusapp.films.Film3
-import ru.s.ottusapp.films.Film4
+import ru.s.ottusapp.filmsActivity.Film1
+import ru.s.ottusapp.filmsActivity.Film2
+import ru.s.ottusapp.filmsActivity.Film3
+import ru.s.ottusapp.filmsActivity.Film4
 
 class MainActivity : AppCompatActivity() {
     val TAG = "LifeCycle"

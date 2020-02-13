@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".films.Film4">
+    tools:context=".filmsActivity.Film4">
 
     <ImageView
         android:id="@+id/imgFilm4"
@@ -26,12 +26,12 @@
 
     <Button
         android:id="@+id/btnInviteFilm4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+       style="@style/btnFilms"
         android:onClick="btnInviteFilm4"
-        android:text="@string/btnInviteFilm4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailsFilm4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
 
         />
 

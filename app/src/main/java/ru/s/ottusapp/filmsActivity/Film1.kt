@@ -1,4 +1,4 @@
-package ru.s.ottusapp.films
+package ru.s.ottusapp.filmsActivity
 
 import android.content.Intent
 import android.os.Bundle

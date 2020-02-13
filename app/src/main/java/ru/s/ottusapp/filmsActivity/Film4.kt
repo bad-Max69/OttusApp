@@ -1,4 +1,4 @@
-package ru.s.ottusapp.films
+package ru.s.ottusapp.filmsActivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,15 +7,14 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import ru.s.ottusapp.R
 
-class Film2 : AppCompatActivity() {
+class Film4 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_film2)
+        setContentView(R.layout.activity_film4)
     }
-
-    fun btnInviteFilm2(view: View?) {
-        Log.d("1", "inv2")
+    fun btnInviteFilm4(view: View?) {
+        Log.d("1", "inv4")
         val message = "Пошли в кино на ..."
         val sendIntent = Intent()
         sendIntent.action = Intent.ACTION_SEND
@@ -27,3 +26,5 @@ class Film2 : AppCompatActivity() {
         }
     }
 }
+
+
