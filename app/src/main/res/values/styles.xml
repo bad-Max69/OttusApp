@@ -17,12 +17,16 @@
     </style>
 
     <style name="btnFilms">
+        <item name="android:layout_width"> wrap_content </item>
+        <item name="android:layout_height"> wrap_content</item>
+        <item name="android:text"> @string/btnInviteFilm</item>
+    </style>
+
+ <style name="btnInviteFilms">
         <item name="android:layout_width"> 0dp </item>
         <item name="android:layout_height"> wrap_content</item>
         <item name="android:text"> @string/btnInviteFilm</item>
         <item name="android:drawableEnd"> @drawable/ic_person_add_24px</item>
-
-
     </style>
 
 

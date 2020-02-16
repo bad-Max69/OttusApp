@@ -26,7 +26,7 @@
 
     <Button
         android:id="@+id/btnInviteFilm2"
-        style="@style/btnFilms"
+        style="@style/btnInviteFilms"
         android:onClick="btnInviteFilm2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/detailsFilm2"

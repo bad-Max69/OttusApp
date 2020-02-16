@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/invasionImg"
+                    android:layout_width="0dp"
+                    android:layout_height="300dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/VenomImg"
+                    app:layout_constraintBottom_toTopOf="@id/button"
+                    android:cropToPadding="false"
+                    app:srcCompat="@drawable/invasionimg"
+                    tools:ignore="ContentDescription"
+                    />
+
+                <Button
+                    android:id="@+id/button"
+                    style="@style/btnFilms"
+                    android:layout_marginBottom="1dp"
+                    android:onClick="buttonFilm1"
+                    android:text="@string/Film1"
+                    app:layout_constraintBottom_toTopOf="@id/androidImg"
+                    app:layout_constraintEnd_toEndOf="@id/invasionImg"
+                    app:layout_constraintStart_toStartOf="@id/invasionImg"
+                    app:layout_constraintTop_toBottomOf="@id/invasionImg" />
+
+                <ImageView
+                    android:id="@+id/VenomImg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintBottom_toTopOf="@id/button2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/invasionImg"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/venomimg"
+                    tools:ignore="ContentDescription" />
+
+                <Button
+                    android:id="@+id/button2"
+                    style="@style/btnFilms"
+                    android:onClick="buttonFilm2"
+                    android:text="@string/Film2"
+                    app:layout_constraintStart_toStartOf="@id/VenomImg"
+                    app:layout_constraintTop_toBottomOf="@id/VenomImg"
+                    app:layout_constraintEnd_toEndOf="@id/VenomImg"
+                    app:layout_constraintBottom_toTopOf="@id/avengersImg"
+                    />
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <ImageView
+                    android:id="@+id/androidImg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:srcCompat="@drawable/androidimg"
+                    tools:ignore="ContentDescription"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/button2"
+                    app:layout_constraintEnd_toEndOf="@id/invasionImg"
+                    app:layout_constraintBottom_toTopOf="@id/button3"
+                    />
+
+
+                <Button
+                    android:id="@+id/button3"
+                    style="@style/btnFilms"
+                    android:onClick="buttonFilm3"
+                    android:text="@string/Film"
+                    app:layout_constraintStart_toStartOf="@id/androidImg"
+                    app:layout_constraintTop_toBottomOf="@id/androidImg"
+                    app:layout_constraintEnd_toEndOf="@id/androidImg"
+
+                    />
+
+                <ImageView
+                    android:id="@+id/avengersImg"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:srcCompat="@drawable/avengerswarimg"
+                    tools:ignore="ContentDescription"
+                    app:layout_constraintStart_toEndOf="@id/androidImg"
+                    app:layout_constraintTop_toBottomOf="@id/button2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/button4"
+                    />
+
+                <Button
+                    android:id="@+id/button4"
+                    style="@style/btnFilms"
+                    android:onClick="buttonFilm4"
+                    android:text="@string/Film4"
+                    app:layout_constraintStart_toStartOf="@id/avengersImg"
+                    app:layout_constraintTop_toBottomOf="@id/avengersImg"
+                    app:layout_constraintEnd_toEndOf="@id/avengersImg"
+
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
