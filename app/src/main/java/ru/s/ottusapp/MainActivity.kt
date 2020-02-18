@@ -1,5 +1,7 @@
 package ru.s.ottusapp
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -91,5 +93,22 @@ class MainActivity : AppCompatActivity() {
         btnTextClr.add(button4.id)
     }
 
+    override fun onBackPressed() {
+       // super.onBackPressed()
+        showAlertDialog()
+
+
+    }
+   private fun showAlertDialog() {
+        val bld: AlertDialog.Builder = AlertDialog.Builder(this)
+        val lst = DialogInterface.OnClickListener { dialog, which -> finish() }
+       // bld.setMessage("Really exit?")
+        bld.setTitle("Really exit?")
+        bld.setNegativeButton("No", lst)
+        // bld.setNeutralButton("Later", lst)
+        bld.setPositiveButton("Agree :(", lst)
+        val dialog: AlertDialog = bld.create()
+        dialog.show()
+    }
 }
 
