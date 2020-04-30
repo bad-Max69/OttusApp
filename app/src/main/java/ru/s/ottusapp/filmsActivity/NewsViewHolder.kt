@@ -7,13 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.s.ottusapp.R
 
 class NewsViewHolder (item:View): RecyclerView.ViewHolder(item) {
-	val titleNews:TextView = item.findViewById(R.id.title_news)
-	val subtitleNews:TextView = item.findViewById(R.id.sub_title_news)
-	val imageNews: ImageView = item.findViewById(R.id.image_news)
+	val title:TextView = item.findViewById(R.id.title)
+	val subtitle:TextView = item.findViewById(R.id.sub_title)
+	val image: ImageView = item.findViewById(R.id.image)
 
 	fun bind (item: FilmsItem){
-		titleNews.text = item.title
-		subtitleNews.text = item.Subtitle
-		imageNews.setBackgroundColor(item.color)
+		title.setText(item.title)               // title.text = item.title
+		subtitle.setText(item.Subtitle)         // subtitle.text = item.subtitle
+		image.setImageResource(item.drawable)   // image.setImageResource(item.drawable)
 	}
 }

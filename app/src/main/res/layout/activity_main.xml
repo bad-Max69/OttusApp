@@ -94,7 +94,7 @@
         android:id="@+id/button3"
         style="@style/btnFilms"
         android:onClick="buttonFilm3"
-        android:text="@string/Film"
+        android:text="@string/Film3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/androidImg"
         app:layout_constraintStart_toStartOf="@+id/androidImg"
