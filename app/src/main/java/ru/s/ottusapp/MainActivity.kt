@@ -7,9 +7,9 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ru.s.ottusapp.filmsActivity.*
-import ru.s.ottusapp.filmsActivity.Films.listFavorite
-import ru.s.ottusapp.filmsActivity.Films.listFilms
+import ru.s.ottusapp.FilmsRecycler.*
+import ru.s.ottusapp.FilmsRecycler.Films.listFavorite
+import ru.s.ottusapp.FilmsRecycler.Films.listFilms
 
 
 

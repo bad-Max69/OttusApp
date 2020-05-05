@@ -9,12 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FavoriteActivity"></activity>
-        <activity android:name=".filmsActivity.Film4" />
-        <activity android:name=".filmsActivity.Film3" />
-        <activity android:name=".filmsActivity.Film2" />
         <activity
-            android:name=".filmsActivity.Film1"
+            android:name=".FavoriteActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

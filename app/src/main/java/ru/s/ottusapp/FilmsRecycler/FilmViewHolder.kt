@@ -1,4 +1,4 @@
-package ru.s.ottusapp.filmsActivity
+package ru.s.ottusapp.FilmsRecycler
 
 import android.view.View
 import android.widget.CheckBox

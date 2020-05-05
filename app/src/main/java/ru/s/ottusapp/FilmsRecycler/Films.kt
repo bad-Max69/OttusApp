@@ -1,4 +1,4 @@
-package ru.s.ottusapp.filmsActivity
+package ru.s.ottusapp.FilmsRecycler
 
 import ru.s.ottusapp.R
 

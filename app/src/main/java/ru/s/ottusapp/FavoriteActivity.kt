@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ru.s.ottusapp.filmsActivity.Films.listFavorite
-import ru.s.ottusapp.filmsActivity.FilmsItem
+import ru.s.ottusapp.FilmsRecycler.Films.listFavorite
+import ru.s.ottusapp.FilmsRecycler.FilmsItem
 
-import ru.s.ottusapp.filmsActivity.FilmAdapter
+import ru.s.ottusapp.FilmsRecycler.FilmAdapter
 
 
 
