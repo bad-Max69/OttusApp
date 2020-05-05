@@ -8,16 +8,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ru.s.ottusapp.filmsActivity.*
+import ru.s.ottusapp.filmsActivity.Films.listFavorite
 import ru.s.ottusapp.filmsActivity.Films.listFilms
 
+
+
+
+
 class MainActivity : AppCompatActivity() {
-
-
-
-
-
-
-    val test = "sdfafdMSX"
 
 
 
@@ -33,23 +31,19 @@ class MainActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = layoutManager
-        recyclerView.adapter = NewsAdapter(LayoutInflater.from(this), listFilms)
+        recyclerView.adapter = FilmAdapter(LayoutInflater.from(this), listFilms)
+
     }
+
 
     fun favoriteFilms(view: View) {
 
+        val intent = Intent(this@MainActivity, FavoriteActivity::class.java)
 
-           val intent = Intent(this@MainActivity, FavoriteActivity::class.java)
-          // intent.putExtra("favorite_list", favoriteList as Serializable)
+        listFavorite = listFilms.filter { i:FilmsItem -> i.favor }.toMutableList()
 
-           startActivity(intent)
+        startActivity(intent)
 
-
-            /*button2.setTextColor(ContextCompat.getColor(this, R.color.colorAccent))
-            btnTextClr.add(button2.id)*/
-        }
-
-
-
+    }
 }
 
