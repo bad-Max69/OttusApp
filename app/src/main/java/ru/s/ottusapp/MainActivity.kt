@@ -7,27 +7,20 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ru.s.ottusapp.FilmsRecycler.*
-import ru.s.ottusapp.FilmsRecycler.Films.listFavorite
-import ru.s.ottusapp.FilmsRecycler.Films.listFilms
-
-
-
+import ru.s.ottusapp.filmsRecycler.*
+import ru.s.ottusapp.filmsRecycler.Films.listFavorite
+import ru.s.ottusapp.filmsRecycler.Films.listFilms
 
 
 class MainActivity : AppCompatActivity() {
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main1)
-
         initRecycler()
     }
 
-    fun initRecycler() {
-
+     private fun initRecycler() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = layoutManager
@@ -35,15 +28,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-
     fun favoriteFilms(view: View) {
-
         val intent = Intent(this@MainActivity, FavoriteActivity::class.java)
-
         listFavorite = listFilms.filter { i:FilmsItem -> i.favor }.toMutableList()
-
         startActivity(intent)
-
     }
 }
 
