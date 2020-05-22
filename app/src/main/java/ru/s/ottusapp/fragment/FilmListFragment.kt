@@ -22,6 +22,6 @@ class FilmListFragment:Fragment() {
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
-		view.findViewById<RecyclerView>(R.id.recyclerView).adapter = FilmAdapter(LayoutInflater.from(context), listFilms)
+		view.findViewById<RecyclerView>(R.id.recyclerView_fragment).adapter = FilmAdapter(LayoutInflater.from(context), listFilms)
 	}
 }

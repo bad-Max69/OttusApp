@@ -17,16 +17,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main1)
-        initRecycler()
+
     }
 
-     private fun initRecycler() {
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView)
+   /*  private fun initRecycler() {
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerView_fragment)
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = layoutManager
         recyclerView.adapter = FilmAdapter(LayoutInflater.from(this), listFilms)
 
-    }
+    }*/
 
     fun favoriteFilms(view: View) {
         val intent = Intent(this@MainActivity, FavoriteActivity::class.java)
