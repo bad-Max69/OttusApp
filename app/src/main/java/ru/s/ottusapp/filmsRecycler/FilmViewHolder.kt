@@ -11,7 +11,7 @@ class FilmViewHolder (item:View): RecyclerView.ViewHolder(item) {
 	private val title:TextView = item.findViewById(R.id.title)
 	private val subtitle:TextView = item.findViewById(R.id.sub_title)
 	private val image: ImageView = item.findViewById(R.id.image)
-	 var wish: CheckBox = item.findViewById(R.id.wish_box)
+	        var wish: CheckBox = item.findViewById(R.id.wish_box)
 
 
 	fun bind (item: FilmsItem){

@@ -36,7 +36,7 @@ class FavoriteActivity : AppCompatActivity() {
 		val recyclerView = findViewById<RecyclerView>(R.id.recyclerFavoriteView)
 		val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 		recyclerView.layoutManager = layoutManager
-		recyclerView.adapter = FilmAdapter(LayoutInflater.from(this), list)
+		recyclerView.adapter = FilmAdapter(LayoutInflater.from(this), list, null)
 	}
 }
 
