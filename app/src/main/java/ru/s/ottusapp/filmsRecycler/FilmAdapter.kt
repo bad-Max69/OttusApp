@@ -1,7 +1,6 @@
 package ru.s.ottusapp.filmsRecycler
 
 import android.view.LayoutInflater
-import android.view.OrientationEventListener
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.s.ottusapp.R
