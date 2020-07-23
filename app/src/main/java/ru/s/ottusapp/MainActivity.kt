@@ -1,33 +1,28 @@
 package ru.s.ottusapp
 
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import ru.s.ottusapp.filmsRecycler.*
 import ru.s.ottusapp.filmsRecycler.Films.listFavorite
 import ru.s.ottusapp.filmsRecycler.Films.listFilms
+import ru.s.ottusapp.fragment.FavoriteFragment
 import ru.s.ottusapp.fragment.FilmListFragment
 import ru.s.ottusapp.fragment.FilmsDetailedFragment
 
 
-class MainActivity : AppCompatActivity(), FilmListFragment.OnFilmsClickListener {
-
+class MainActivity : AppCompatActivity(),
+    FilmListFragment.OnFilmsClickListener,
+    FavoriteFragment.OnFavoriteClickListener {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main1)
-
-
 
         supportFragmentManager
             .beginTransaction()
@@ -38,7 +33,10 @@ class MainActivity : AppCompatActivity(), FilmListFragment.OnFilmsClickListener 
 	override fun onAttachFragment(fragment: Fragment?) {
 		super.onAttachFragment(fragment)
 
-		if (fragment is FilmListFragment) fragment.listener = this
+        when (fragment) {
+            is FilmListFragment -> fragment.listener = this
+            is FavoriteFragment -> fragment.listener = this
+        }
 	}
 
 
@@ -53,13 +51,23 @@ class MainActivity : AppCompatActivity(), FilmListFragment.OnFilmsClickListener 
     }
 
     fun favoriteFilms(view: View) {
-        val intent = Intent(this@MainActivity, FavoriteActivity::class.java)
         listFavorite = listFilms.filter { i:FilmsItem -> i.favor }.toMutableList()
-        startActivity(intent)
+
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, FavoriteFragment(), FavoriteFragment.TAG)
+            .addToBackStack(null)
+            .commit()
     }
 
     override fun onFilmClick(item: FilmsItem) {
         openFilmsDetailed(item)
+        Log.e("Click","FilmClick")
+    }
+
+    override fun onFavoriteClick(item: FilmsItem) {
+        openFilmsDetailed(item)
+        Log.e("Click","FavClick")
     }
 }
 

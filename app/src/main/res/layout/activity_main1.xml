@@ -8,36 +8,10 @@
     app:layout_constraintHorizontal_weight="1"
     tools:context=".MainActivity">
 
-  
-
    <FrameLayout
        android:id="@+id/fragmentContainer"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        />
-
-
-
-
-  <!-- <fragment
-       android:id="@+id/fragment_listFilms"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:name="ru.s.ottusapp.fragment.FilmListFragment"
-      />-->
-
-
-   <Button
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintBottom_toBottomOf="parent"
-       android:layout_marginEnd="20dp"
-       android:layout_marginBottom="20dp"
-       android:text="@string/favorite_films"
-       android:onClick="favoriteFilms"
-
-      />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
