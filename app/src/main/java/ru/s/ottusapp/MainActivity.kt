@@ -1,12 +1,15 @@
 package ru.s.ottusapp
 
 
+import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.fragment_films_detailed.*
 import ru.s.ottusapp.filmsRecycler.*
 import ru.s.ottusapp.filmsRecycler.Films.listFavorite
 import ru.s.ottusapp.filmsRecycler.Films.listFilms
@@ -24,24 +27,29 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main1)
 
+
+
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragmentContainer, FilmListFragment(), FilmListFragment.TAG)
             .commit()
     }
 
-	override fun onAttachFragment(fragment: Fragment?) {
+	override fun onAttachFragment(fragment: Fragment) {
 		super.onAttachFragment(fragment)
 
         when (fragment) {
             is FilmListFragment -> fragment.listener = this
             is FavoriteFragment -> fragment.listener = this
+            //is FilmsDetailedFragment -> Activity.SetActionBar(toolbar)
         }
 	}
 
 
     private fun openFilmsDetailed(item: FilmsItem){
 	    Toast.makeText(this, item.title, Toast.LENGTH_LONG ).show()
+
+
 
         supportFragmentManager
             .beginTransaction()
