@@ -1,15 +1,14 @@
 package ru.s.ottusapp
 
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
-import kotlinx.android.synthetic.main.fragment_films_detailed.*
 import ru.s.ottusapp.filmsRecycler.*
 import ru.s.ottusapp.filmsRecycler.Films.listFavorite
 import ru.s.ottusapp.filmsRecycler.Films.listFilms
@@ -27,38 +26,40 @@ class MainActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main1)
 
+        openListFilmsFragment()
 
 
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, FilmListFragment(), FilmListFragment.TAG)
-            .commit()
     }
+
+    private fun openListFilmsFragment() =  supportFragmentManager
+        .beginTransaction()
+        .replace(R.id.fragmentContainer, FilmListFragment(), FilmListFragment.TAG)
+        .commit()
+
 
 	override fun onAttachFragment(fragment: Fragment) {
 		super.onAttachFragment(fragment)
 
         when (fragment) {
-            is FilmListFragment -> fragment.listener = this
-            is FavoriteFragment -> fragment.listener = this
-            //is FilmsDetailedFragment -> Activity.SetActionBar(toolbar)
+            is FilmListFragment -> {fragment.listener = this; Log.e("fragmentList","now")}
+            is FavoriteFragment -> {fragment.listener = this;  Log.e("fragmentFavor","now")}
+            is FilmsDetailedFragment -> {  Log.e("fragmentDetal","now")}
         }
 	}
 
 
-    private fun openFilmsDetailed(item: FilmsItem){
+    private fun openFilmsDetailedFragment(item: FilmsItem){
 	    Toast.makeText(this, item.title, Toast.LENGTH_LONG ).show()
-
 
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.fragmentContainer, FilmsDetailedFragment(), FilmsDetailedFragment.TAG)
+            .replace(R.id.fragmentContainer, FilmsDetailedFragment.newInstance(item), FilmsDetailedFragment.TAG)
             .addToBackStack(null)
             .commit()
     }
 
-    fun favoriteFilms(view: View) {
+    fun openFavoriteFilmsFragment(view: View) {
         listFavorite = listFilms.filter { i:FilmsItem -> i.favor }.toMutableList()
 
         supportFragmentManager
@@ -68,13 +69,15 @@ class MainActivity : AppCompatActivity(),
             .commit()
     }
 
+
+
     override fun onFilmClick(item: FilmsItem) {
-        openFilmsDetailed(item)
+        openFilmsDetailedFragment(item)
         Log.e("Click","FilmClick")
     }
 
     override fun onFavoriteClick(item: FilmsItem) {
-        openFilmsDetailed(item)
+        openFilmsDetailedFragment(item)
         Log.e("Click","FavClick")
     }
 }

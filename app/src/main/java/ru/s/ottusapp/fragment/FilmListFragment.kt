@@ -39,8 +39,40 @@ class FilmListFragment:Fragment() {
 			listFilms
 		)  {listener?.onFilmClick(it)}
 
-		Log.e(TAG,"List")
+		Log.e(TAG,"Created")
+
+
 	}
+
+	/*override fun onResume() {
+		super.onResume()
+		Log.e(TAG, "Resume")
+	}
+
+	override fun onPause() {
+		super.onPause()
+
+		Log.e(TAG, "Pause")
+	}
+
+	override fun onStop() {
+		super.onStop()
+
+		Log.e(TAG, "Stop")
+	}
+
+	override fun onDestroy() {
+		super.onDestroy()
+		Log.e(TAG, "Destroy")
+
+	}
+
+	override fun onDetach() {
+		super.onDetach()
+		Log.e(TAG, "Detach")
+
+	}*/
+
 
 	interface OnFilmsClickListener {
 		fun onFilmClick(item: FilmsItem)

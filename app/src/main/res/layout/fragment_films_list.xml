@@ -23,7 +23,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:text="@string/favorite_films"
-        android:onClick="favoriteFilms"
+        android:onClick="openFavoriteFilmsFragment"
 
         />
 

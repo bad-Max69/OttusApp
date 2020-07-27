@@ -2,7 +2,9 @@ package ru.s.ottusapp.filmsRecycler
 
 import ru.s.ottusapp.R
 
+
 object Films {
+
 
 	val listFilms = mutableListOf(
 		FilmsItem (R.string.Film1, R.string.detailsFilm1, R.drawable.invasionimg ),

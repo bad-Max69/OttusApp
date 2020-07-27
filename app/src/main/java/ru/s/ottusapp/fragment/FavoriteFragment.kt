@@ -39,8 +39,37 @@ class FavoriteFragment : Fragment() {
 				Films.listFavorite
 			) { listener?.onFavoriteClick(it) }
 
-		Log.e(TAG,"Fav")
+		Log.e(TAG,"Created")
 	}
+
+	/*override fun onResume() {
+		super.onResume()
+		Log.e(TAG, "Resume")
+	}
+
+	override fun onPause() {
+		super.onPause()
+
+		Log.e(TAG, "Pause")
+	}
+
+	override fun onStop() {
+		super.onStop()
+
+		Log.e(TAG, "Stop")
+	}
+
+	override fun onDestroy() {
+		super.onDestroy()
+		Log.e(TAG, "Destroy")
+
+	}
+
+	override fun onDetach() {
+		super.onDetach()
+		Log.e(TAG, "Detach")
+
+	}*/
 
 	companion object {
 		const val TAG = "FavoriteListFragment"
