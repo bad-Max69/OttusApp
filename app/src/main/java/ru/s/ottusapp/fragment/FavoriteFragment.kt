@@ -5,8 +5,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.fragment_films_favorite.view.*
 import ru.s.ottusapp.R
 import ru.s.ottusapp.filmsRecycler.FilmAdapter
 import ru.s.ottusapp.filmsRecycler.Films
@@ -14,7 +16,7 @@ import ru.s.ottusapp.filmsRecycler.FilmsItem
 
 class FavoriteFragment : Fragment() {
 
-	var listener: OnFavoriteClickListener? = null
+	var listenerFav: OnFavoriteClickListener? = null
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -33,11 +35,11 @@ class FavoriteFragment : Fragment() {
 	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 		super.onViewCreated(view, savedInstanceState)
 
-		view.findViewById<RecyclerView>(R.id.recyclerView_fragment_favorite).adapter =
+		view.recyclerView_fragment_favorite.adapter =
 			FilmAdapter(
 				LayoutInflater.from(context),
 				Films.listFavorite
-			) { listener?.onFavoriteClick(it) }
+			) {item, sharedTitle, sharedImageView:ImageView -> listenerFav?.onFavoriteClick(item, sharedTitle, sharedImageView) }
 
 		Log.e(TAG,"Created")
 	}
@@ -77,7 +79,7 @@ class FavoriteFragment : Fragment() {
 
 
 	interface OnFavoriteClickListener {
-		fun onFavoriteClick(item: FilmsItem)
+		fun onFavoriteClick(item: FilmsItem, sharedTitle: View, sharedImageView: ImageView)
 	}
 }
 

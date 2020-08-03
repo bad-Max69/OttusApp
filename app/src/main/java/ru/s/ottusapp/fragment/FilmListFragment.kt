@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import ru.s.ottusapp.R
@@ -37,7 +38,7 @@ class FilmListFragment:Fragment() {
 		view.findViewById<RecyclerView>(R.id.recyclerView_fragment).adapter =
 			FilmAdapter(LayoutInflater.from(context),
 			listFilms
-		)  {listener?.onFilmClick(it)}
+		)  {item, sharedTitle, sharedSubTitle-> listener?.onFilmClick(item, sharedTitle, sharedSubTitle)}
 
 		Log.e(TAG,"Created")
 
@@ -75,7 +76,7 @@ class FilmListFragment:Fragment() {
 
 
 	interface OnFilmsClickListener {
-		fun onFilmClick(item: FilmsItem)
+		fun onFilmClick(item: FilmsItem, sharedTitle: View, sharedImageView: ImageView)
 
 	}
 

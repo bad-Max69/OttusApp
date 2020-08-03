@@ -25,6 +25,7 @@
                 android:layout_margin="10dp"
                 android:text="@string/detailsFilm1"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+
                 />
 
         </androidx.cardview.widget.CardView>
@@ -48,6 +49,7 @@
             app:expandedTitleMarginEnd="20dp"
             app:expandedTitleMarginStart="15dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
+
             >
 
             <ImageView
@@ -56,14 +58,17 @@
                 android:layout_height="wrap_content"
                 android:scaleType="centerCrop"
                 android:src="@drawable/androidimg"
-                app:layout_collapseMode="parallax" />
+                app:layout_collapseMode="parallax"
+                android:transitionName="sharedImageView"/>
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                app:titleTextColor="@color/FrafmentDetailedToolbarTextColor"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                android:transitionName="sharedTitle"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 

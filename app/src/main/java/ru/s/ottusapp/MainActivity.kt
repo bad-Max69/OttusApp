@@ -2,10 +2,10 @@ package ru.s.ottusapp
 
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity(),
 
         openListFilmsFragment()
 
-
     }
 
     private fun openListFilmsFragment() =  supportFragmentManager
@@ -37,30 +36,8 @@ class MainActivity : AppCompatActivity(),
         .commit()
 
 
-	override fun onAttachFragment(fragment: Fragment) {
-		super.onAttachFragment(fragment)
-
-        when (fragment) {
-            is FilmListFragment -> {fragment.listener = this; Log.e("fragmentList","now")}
-            is FavoriteFragment -> {fragment.listener = this;  Log.e("fragmentFavor","now")}
-            is FilmsDetailedFragment -> {  Log.e("fragmentDetal","now")}
-        }
-	}
-
-
-    private fun openFilmsDetailedFragment(item: FilmsItem){
-	    Toast.makeText(this, item.title, Toast.LENGTH_LONG ).show()
-
-
-        supportFragmentManager
-            .beginTransaction()
-            .replace(R.id.fragmentContainer, FilmsDetailedFragment.newInstance(item), FilmsDetailedFragment.TAG)
-            .addToBackStack(null)
-            .commit()
-    }
-
     fun openFavoriteFilmsFragment(view: View) {
-        listFavorite = listFilms.filter { i:FilmsItem -> i.favor }.toMutableList()
+        listFavorite = listFilms.filter { i:FilmsItem -> i.favor }.toMutableList() //проблема выбора itema в фаворитах
 
         supportFragmentManager
             .beginTransaction()
@@ -71,13 +48,45 @@ class MainActivity : AppCompatActivity(),
 
 
 
-    override fun onFilmClick(item: FilmsItem) {
-        openFilmsDetailedFragment(item)
+    private fun openFilmsDetailedFragment(item: FilmsItem, sharedTitle: View, sharedSubTitle: View){
+
+        //sharedTitle.transitionName = "123"
+        val detailedFragment = FilmsDetailedFragment.newInstance(item).apply {
+
+            sharedElementEnterTransition = TransitionInflater.from(this@MainActivity)
+                .inflateTransition(R.transition.simple_transition)
+        }
+
+        supportFragmentManager
+            .beginTransaction()
+            .addSharedElement(sharedTitle, "sharedTitle")
+            .addSharedElement(sharedSubTitle, "sharedImageView")
+            .replace(R.id.fragmentContainer,detailedFragment , FilmsDetailedFragment.TAG)
+            .addToBackStack(null)
+            .commit()
+    }
+
+
+
+    override fun onAttachFragment(fragment: Fragment) {
+        super.onAttachFragment(fragment)
+
+        when (fragment) {
+            is FilmListFragment -> {fragment.listener = this; Log.e("fragmentList","now")}
+            is FavoriteFragment -> {fragment.listenerFav = this;  Log.e("fragmentFavor","now")}
+            is FilmsDetailedFragment -> {  Log.e("fragmentDetal","now")}
+        }
+    }
+
+
+
+    override fun onFilmClick(item: FilmsItem, sharedTitle: View, sharedImageView: ImageView) {
+        openFilmsDetailedFragment(item, sharedTitle, sharedImageView)
         Log.e("Click","FilmClick")
     }
 
-    override fun onFavoriteClick(item: FilmsItem) {
-        openFilmsDetailedFragment(item)
+    override fun onFavoriteClick(item: FilmsItem, sharedTitle: View, sharedImageView: ImageView) {
+        openFilmsDetailedFragment(item, sharedTitle, sharedImageView)
         Log.e("Click","FavClick")
     }
 }

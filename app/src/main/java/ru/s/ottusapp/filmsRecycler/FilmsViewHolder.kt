@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ru.s.ottusapp.R
 
-class FilmViewHolder (item:View): RecyclerView.ViewHolder(item) {
+class FilmsViewHolder (item:View): RecyclerView.ViewHolder(item) {
 	private val title:TextView = item.findViewById(R.id.title)
 	private val subtitle:TextView = item.findViewById(R.id.sub_title)
 	private val image: ImageView = item.findViewById(R.id.image)
@@ -18,6 +18,9 @@ class FilmViewHolder (item:View): RecyclerView.ViewHolder(item) {
 		title.setText(item.title)
 		subtitle.setText(item.Subtitle)
 		image.setImageResource(item.drawable)
+
+		title.transitionName = item.title.toString()
+		image.transitionName = item.Subtitle.toString()
 
 	}
 }
